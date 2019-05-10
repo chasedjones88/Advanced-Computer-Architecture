@@ -1,0 +1,43 @@
+# Preference setting overrides
+gui_create_pref_key -category {Globals} -key {load_detail_for_funcov} -value_type {bool} -value {false}
+
+# State setting overrides
+gui_state_default_create -off -ini
+gui_create_state_key -category FindDialog -key m_pMatchCase -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pMatchWord -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pUseCombo -value_type string -value {}
+gui_create_state_key -category FindDialog -key m_pWrapAround -value_type bool -value true
+gui_state_default_create -off
+
+# Begin command logging
+gui_open_db -file /gaia/class/student/jonesc/csc142/vcdplus.vpd -design V1
+gui_find_objects -dialog_close
+gui_open_window Wave
+gui_list_add -id Wave.1 -from Source.1 { aluCtrl_fixture } -insertionbar
+gui_wv_zoom_timerange -id  Wave.1 0 319
+gui_zoom -window  Wave.1  -factor 0.5
+gui_wv_zoom_timerange -id  Wave.1 5 76
+gui_marker_move -id  Wave.1 C1 5
+gui_marker_move -id  Wave.1 C1 7
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.func[3:0]}   }
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.useFunc[1:0]}   }
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.aluSelect[2:0]}   }
+gui_marker_move -id  Wave.1 C1 21
+gui_marker_move -id  Wave.1 C1 21
+gui_marker_move -id  Wave.1 C1 14
+gui_marker_move -id  Wave.1 C1 8
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.useFunc[1:0]}   }
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.aluSelect[2:0]}   }
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.useFunc[1:0]}   }
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.func[3:0]}   }
+gui_wv_scroll_hslidermove -id  Wave.1 0
+gui_list_select -id Wave.1 -selected  { aluCtrl_fixture.fwdA   }
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.func[3:0]}   }
+gui_wv_scroll_hslidermove -id  Wave.1 0
+gui_wv_scroll_hslidermove -id  Wave.1 0
+gui_wv_zoom_timerange -id  Wave.1 0 50
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.aMux[2:0]}   }
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.bMux[2:0]}   }
+gui_wv_scroll_hslidermove -id  Wave.1 324
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.aMux[2:0]}   }
+gui_list_select -id Wave.1 -selected  { {aluCtrl_fixture.bMux[2:0]}   }
