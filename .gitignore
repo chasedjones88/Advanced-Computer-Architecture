@@ -1,6 +1,5 @@
 *.odt
 *.pdf
-csrc/
-simv.daidir
 *.key
-ignoredfiles
+ignoredfolder/
+ignoredfolder/*
