@@ -1,5 +1,7 @@
 *.odt
 *.pdf
 *.key
+simv.*
+csrc/
 ignoredfolder/
 ignoredfolder/*
